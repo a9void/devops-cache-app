@@ -1,0 +1,16 @@
+[Unit]
+Description=Backend API
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+DynamicUser=yes
+Environment=CONFIG_PATH=/etc/backend-api/config.yaml
+ExecStart=/usr/bin/backend-api
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+

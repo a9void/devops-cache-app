@@ -1,0 +1,16 @@
+[Unit]
+Description=Caching Flask Proxy API
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+DynamicUser=yes
+Environment=CONFIG_PATH=/etc/cache-api/config.yaml
+ExecStart=/usr/bin/python3 /usr/libexec/cache-api/cache-api.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+

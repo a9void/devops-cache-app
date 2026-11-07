@@ -1,0 +1,7 @@
+Package: backend-api
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: amd64
+Maintainer: DevOps Lab
+Description: Go HTTP API for reading users from PostgreSQL
